@@ -4,7 +4,7 @@ Jumping Game
 
 ## URL
 
-Live Demo: https://simeonk96.github.io/rps-game/
+Live Demo: https://a-kilic.github.io/jumping-game/
 
 ## Authors
 
