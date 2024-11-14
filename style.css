@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: #f0f0f0;
+}
+
+#gameCanvas{
+    width: 1000px;
+    height: 200px;
+    border-style : solid;
+    margin: auto;
+    background-color: white;
+}
+
+#player{
+    width: 20px;
+    height: 50px;
+    background-color: red;
+    position:relative;
+    top: 150px;
+    margin-left: 5em;
+}
+
+#obstacle{
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 130px;
+    left: 500px;
+    animation: obstacle 2s infinite linear;
+}
+@keyframes obstacle{
+    0%{left: 1000px}
+    100%{left: -20px}
+}
