@@ -1,4 +1,8 @@
 const player = document.getElementById("player");
+const obstacle = document.getElementById("obstacle");
+const gameOverModal = document.getElementById("gameOverModal");
+const playAgain = document.getElementById("playAgain");
+const exitGame = document.getElementById("exitGame");
 
 let isJumping = false;
 let gameOver = false;
@@ -45,8 +49,22 @@ function checkCollision() {
 
 function endGame() {
     obstacle.style.animation = 'none';
-    alert("Game Over! You collided with the obstacle.");
+    //alert("Game Over! You collided with the obstacle.");
+    gameOverModal.style.display = 'flex';
 }
+
+
+playAgain.addEventListener("click", () => {
+    gameOverModal.style.display = 'none'; 
+    gameLoop();
+});
+
+
+exitGame.addEventListener("click", () => {
+    gameOverModal.style.display = 'none'; 
+  
+});
+
 
 //Continuously check for collision
 function gameLoop() {
