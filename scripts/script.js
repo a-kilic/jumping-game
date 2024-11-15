@@ -16,18 +16,18 @@ let highScore = localStorage.getItem("highScore") || 0;
 highScoreElement.textContent = highScore;
 
 function showWelcomeModal() {
-    welcomeModal.style.display = "flex";
+  welcomeModal.style.display = "flex";
 }
-  
+
 function startGameHandler() {
-    welcomeModal.style.display = "none";
-    gameStarted = true;
-    obstacle.style.animationPlayState = "running";
-    gameLoop();
+  welcomeModal.style.display = "none";
+  gameStarted = true;
+  obstacle.style.animationPlayState = "running";
+  gameLoop();
 }
 
 function jump() {
-    if (isJumping || !gameStarted) return;
+  if (isJumping || !gameStarted) return;
 
   isJumping = true;
   player.classList.add("jump");
@@ -45,8 +45,6 @@ function jump() {
 window.addEventListener("keydown", (e) => {
   if (e.code === "Space") {
     jump();
-  } else {
-    return null;
   }
 });
 
@@ -101,19 +99,12 @@ function updateScore() {
 }
 
 function gameLoop() {
-  if (!gameOver) {
+  if (!gameOver && gameStarted) {
     checkCollision();
     updateScore();
     requestAnimationFrame(gameLoop);
   }
 }
 
-setInterval(() => {
-  if (!gameOver) {
-    updateScore();
-  }
-}, 1000);
-
 showWelcomeModal();
-
 startGame.addEventListener("click", startGameHandler);
