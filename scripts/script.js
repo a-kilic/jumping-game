@@ -1,8 +1,7 @@
 const player = document.getElementById("player");
 const obstacle = document.getElementById("obstacle");
 const gameOverModal = document.getElementById("gameOverModal");
-const playAgain = document.getElementById("playAgain");
-const exitGame = document.getElementById("exitGame");
+const restartGame = document.getElementById("restartGame");
 
 let isJumping = false;
 let gameOver = false;
@@ -51,14 +50,16 @@ function endGame() {
   gameOverModal.style.display = "flex";
 }
 
-playAgain.addEventListener("click", () => {
+restartGame.addEventListener("click", () => {
   gameOverModal.style.display = "none";
-  gameLoop();
+  resetGame();
 });
 
-exitGame.addEventListener("click", () => {
-  gameOverModal.style.display = "none";
-});
+function resetGame() {
+  gameOver = false;
+  obstacle.style.animation = "";
+  gameLoop();
+}
 
 function gameLoop() {
   if (!gameOver) {
