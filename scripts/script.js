@@ -15,14 +15,18 @@ let highScore = localStorage.getItem("highScore") || 0;
 
 highScoreElement.textContent = highScore;
 
-function showWelcomeModal() {
-  welcomeModal.style.display = "flex";
+function toggleModal(modal, show) {
+  if (show) {
+    modal.classList.add("show");
+  } else {
+    modal.classList.remove("show");
+  }
 }
 
 function startGameHandler() {
-  welcomeModal.style.display = "none";
+  toggleModal(welcomeModal, false);
   gameStarted = true;
-  obstacle.style.animationPlayState = "running";
+  obstacle.classList.add("running");
   gameLoop();
 }
 
@@ -64,8 +68,8 @@ function checkCollision() {
 }
 
 function endGame() {
-  obstacle.style.animation = "none";
-  gameOverModal.style.display = "flex";
+  obstacle.classList.remove("running"); 
+  toggleModal(gameOverModal, true); 
 
   if (score > highScore) {
     highScore = score;
@@ -74,7 +78,7 @@ function endGame() {
 }
 
 restartGame.addEventListener("click", () => {
-  gameOverModal.style.display = "none";
+  toggleModal(gameOverModal, false); 
   resetGame();
 });
 
@@ -82,8 +86,7 @@ function resetGame() {
   gameOver = false;
   score = 0;
   currentScoreElement.textContent = score;
-  obstacle.style.animation = "";
-  obstacle.style.animationPlayState = "running";
+  obstacle.classList.add("running");
   gameLoop();
 }
 
@@ -106,5 +109,6 @@ function gameLoop() {
   }
 }
 
-showWelcomeModal();
+toggleModal(welcomeModal, true);
 startGame.addEventListener("click", startGameHandler);
+
