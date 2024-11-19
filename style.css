@@ -84,6 +84,11 @@ body {
   top: 80px;
 }
 
+#obstacle.tiny {
+  height: 30px;
+  top: 120px;
+}
+
 @keyframes obstacle {
   0% {
     left: 1000px;

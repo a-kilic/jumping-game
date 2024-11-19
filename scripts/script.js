@@ -16,10 +16,12 @@ let highScore = localStorage.getItem("highScore") || 0;
 highScoreElement.textContent = highScore;
 
 function randomizeObstacleSize() {
-  obstacle.classList.remove('small', 'large'); 
+  obstacle.classList.remove('small', 'large', 'tiny'); 
 
-  const isLarge = Math.random() > 0.5; 
-  obstacle.classList.add(isLarge ? 'large' : 'small');
+  const sizes = ['small', 'large', 'tiny'];
+  const randomSize = sizes[Math.floor(Math.random() * sizes.length)];
+
+  obstacle.classList.add(randomSize);
 }
 
 function toggleModal(modal, show) {
