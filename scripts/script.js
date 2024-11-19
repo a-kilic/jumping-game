@@ -15,6 +15,13 @@ let highScore = localStorage.getItem("highScore") || 0;
 
 highScoreElement.textContent = highScore;
 
+function randomizeObstacleSize() {
+  obstacle.classList.remove('small', 'large'); 
+
+  const isLarge = Math.random() > 0.5; 
+  obstacle.classList.add(isLarge ? 'large' : 'small');
+}
+
 function toggleModal(modal, show) {
   if (show) {
     modal.classList.add("show");
@@ -82,11 +89,23 @@ restartGame.addEventListener("click", () => {
   resetGame();
 });
 
+obstacle.addEventListener('animationiteration', () => {
+  randomizeObstacleSize(); 
+});
+
 function resetGame() {
   gameOver = false;
   score = 0;
   currentScoreElement.textContent = score;
-  obstacle.classList.add("running");
+  //obstacle.classList.add("running");
+
+  randomizeObstacleSize(); 
+  
+  obstacle.classList.remove('running'); 
+  setTimeout(() => {
+    obstacle.classList.add('running'); 
+  }, 100);
+
   gameLoop();
 }
 

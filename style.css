@@ -72,6 +72,18 @@ body {
   left: 500px;
 }
 
+#obstacle.small {
+  height: 60px;
+  width: 40px;
+  top: 100px;
+}
+
+#obstacle.large {
+  height: 90px;
+  width: 50px;
+  top: 80px;
+}
+
 @keyframes obstacle {
   0% {
     left: 1000px;
@@ -86,7 +98,7 @@ body {
     top: 150px;
   }
   50% {
-    top: 50px;
+    top: 30px;
   }
   100% {
     top: 150px;
@@ -94,7 +106,7 @@ body {
 }
 
 #player.jump {
-  animation: jumpAnimation 0.5s ease;
+  animation: jumpAnimation 0.7s ease;
 }
 
 .modal {
