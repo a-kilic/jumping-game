@@ -10,10 +10,14 @@ body {
 
 #gameCanvas {
   width: 1000px;
-  height: 200px;
+  height: 220px;
   border-style: solid;
   margin: auto;
-  background-color: white;
+  /* background-color: white; */
+  background-image: url('./images/background.jpg'); /* Path to your background image */
+  background-size: cover; /* Cover the entire canvas */
+  background-position: center center; /* Center the image */
+  background-repeat: no-repeat; 
 }
 
 #scoreBoard {
@@ -45,20 +49,28 @@ body {
 }
 
 #player {
-  width: 20px;
-  height: 50px;
-  background-color: red;
+  width: 30px;
+  height: 70px;
+  /* background-color: red; */
+  background-image: url('./images/cactus.png'); /* Path to your player character image */
+  background-size: contain; /* Ensure the image fits the element */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the image inside the element */
   position: relative;
   top: 150px;
   margin-left: 5em;
 }
 
 #obstacle {
-  background-color: black;
-  width: 20px;
-  height: 20px;
+  /* background-color: black; */
+  width: 40px;
+  height: 60px;
+  background-image: url('./images/dino.png'); /* Path to your player character image */
+  background-size: contain; /* Ensure the image fits the element */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the image inside the element */
   position: relative;
-  top: 130px;
+  top: 100px;
   left: 500px;
 }
 
@@ -76,7 +88,7 @@ body {
     top: 150px;
   }
   50% {
-    top: 70px;
+    top: 50px;
   }
   100% {
     top: 150px;
