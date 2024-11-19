@@ -97,7 +97,6 @@ function resetGame() {
   gameOver = false;
   score = 0;
   currentScoreElement.textContent = score;
-  //obstacle.classList.add("running");
 
   randomizeObstacleSize(); 
   
