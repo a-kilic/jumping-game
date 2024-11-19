@@ -13,10 +13,9 @@ body {
   height: 220px;
   border-style: solid;
   margin: auto;
-  /* background-color: white; */
-  background-image: url('./images/background.jpg'); /* Path to your background image */
-  background-size: cover; /* Cover the entire canvas */
-  background-position: center center; /* Center the image */
+  background-image: url('./images/background.jpg');
+  background-size: cover; 
+  background-position: center center; 
   background-repeat: no-repeat; 
 }
 
@@ -51,24 +50,22 @@ body {
 #player {
   width: 30px;
   height: 70px;
-  /* background-color: red; */
-  background-image: url('./images/cactus.png'); /* Path to your player character image */
-  background-size: contain; /* Ensure the image fits the element */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the image inside the element */
+  background-image: url('./images/cactus.png'); 
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center center;
   position: relative;
   top: 150px;
   margin-left: 5em;
 }
 
 #obstacle {
-  /* background-color: black; */
   width: 40px;
   height: 60px;
-  background-image: url('./images/dino.png'); /* Path to your player character image */
-  background-size: contain; /* Ensure the image fits the element */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  background-position: center center; /* Center the image inside the element */
+  background-image: url('./images/dino.png'); 
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center center;
   position: relative;
   top: 100px;
   left: 500px;
